@@ -1,0 +1,80 @@
+@mixin desktop {
+    @media screen and (min-width: $desktop-width) {
+        @content;
+    }
+}
+
+@mixin largeDesktop {
+    @media screen and (min-width: $large-desktop-width) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: $desktop-width) {
+        @content;
+    }
+}
+
+@mixin button {
+    font-family: $main-font, sans-serif;
+    font-size: $font-size-button;
+    font-weight: bold;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 31px;
+    padding: 5px 23px;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    letter-spacing: .83px;
+    text-transform: none;
+
+    color: white;
+    border: none;
+    border-radius: 20.5px;
+    outline: none;
+}
+
+
+@mixin scrollbar($width, $track-color, $thumb-color) {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        width: $width;
+
+        background: $track-color;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: $thumb-color;
+    }
+}
+
+@mixin noScrollbar {
+    overflow-y: scroll;
+
+    min-height: 100%;
+    max-height: 100%;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+
+@mixin doubleArrow {
+    background: url(../../assets/images/icons/double-arrow.svg) center / contain no-repeat !important;
+}

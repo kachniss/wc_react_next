@@ -1,0 +1,48 @@
+.singleProduct {
+    padding: 1rem;
+
+    box-shadow: 0 0 8px black;
+
+    a {
+        text-transform: uppercase;
+    }
+
+    h3 {
+        font-size: 12px;
+
+        margin: 10px 0;
+
+        text-transform: uppercase;
+
+        color: red;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    .img {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 300px;
+
+        border-radius: 20px;
+
+        img {
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .content {
+        // 
+    }
+
+    .price {
+        color: gray;
+    }
+}
+
+

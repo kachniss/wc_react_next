@@ -1,0 +1,125 @@
+/*******************************************************************************
+*** FORMS
+*******************************************************************************/
+input {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    transition: border-color .3s ease-in-out;
+
+    outline: none;
+}
+
+input, textarea, select {
+    &.form-control {
+        font-size: 17px;
+        font-weight: 300;
+
+        border-color: $color-text;
+        background: transparent;
+
+        &:focus {
+            color: $color-blue;
+            border-color: $color-blue;
+            background: transparent;
+            box-shadow: none;
+
+            & + label {
+                color: $color-blue;
+            }
+        }
+
+        &:disabled {
+            border-color: rgba($color-text, .2);
+            background: transparent;
+        }
+
+        &:required:invalid {
+            border-color: #f00;
+
+            & + label {
+                color: #f00;
+            }
+        }
+    }
+
+    &.form-check-input {
+        position: relative;
+
+        width: 15px;
+        height: 15px;
+
+                appearance: none;
+        -webkit-appearance: none;
+
+        &::before {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+
+            display: block;
+
+            width: 12px;
+            height: 12px;
+
+            content: '';
+
+            border: 1px solid #acadbb;
+            border-radius: 100%;
+        }
+
+        &:checked {
+            background: url(../../assets/images/icons/checked.svg) -1px -1px / 16px no-repeat;
+
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+label.form-label {
+    font-size: 14px;
+    font-weight: 300;
+
+    margin: 0;
+
+    opacity: .7;
+
+    @include desktop {
+        font-size: 11px;
+        font-weight: normal;
+    }
+}
+
+.form-group {
+    position: relative;
+
+    display: flex;
+    flex-flow: column-reverse;
+
+    margin-bottom: 0;
+}
+
+.input-group-prepend {
+    position: absolute;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    background: #545566;
+
+    & + input.form-control {
+        padding-left: calc(.75rem + 40px);
+    }
+}
